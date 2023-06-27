@@ -124,11 +124,12 @@ main {
 }
 
 .section-home {
-  /* background-color: red; */
+  background-color: green;
 }
 .home-container {
   width: 100vw;
-  background-color: #eee;
+  /* background-color: red; */
+  /* background-color: #eee; */
   margin: auto;
   max-width: 1400px;
   display: flex;
@@ -166,4 +167,105 @@ main {
 .home-info .title.active {
   animation: home-title 0.6s forwards;
   display: block;
+}
+
+.menuburguer {
+  margin-right: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  cursor: pointer;
+}
+.line-burguer {
+  width: 100%;
+  height: 8px;
+  background-color: aliceblue;
+  border: 1px solid #222;
+}
+
+@keyframes showMenuMobile {
+  from {
+    margin-right: -1000px;
+    /* margin-right: -1000px; */
+  }
+  to {
+    margin-right: 0;
+  }
+}
+
+.contact-container {
+  width: 100vw;
+  max-width: 1400px;
+  background-color: red;
+}
+.contact-info {
+  width: 200px;
+  height: 100px;
+  background-color: yellow;
+}
+.contact-info dt {
+  text-align: center;
+  cursor: pointer;
+}
+
+.contact-info dd {
+  background-color: orange;
+  padding: 10px;
+  opacity: 0;
+  text-align: center;
+  transform: translate3d(0, -3px, 0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-info dd.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+@media (max-width: 450px) {
+  .header-container .logo {
+    font-size: 33px;
+    width: 190px;
+
+    margin-left: 10px;
+  }
+  .menu nav {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    display: none;
+    margin-right: -1000px;
+  }
+  .menu nav.active {
+    animation: showMenuMobile 1s forwards;
+    display: flex;
+  }
+  .menu ul {
+    /* background-color: yellow; */
+    height: 100%;
+    flex-direction: column;
+    align-items: self-start;
+    padding-top: 20px;
+  }
+  .menu li {
+    /* background-color: blue; */
+  }
+  .header-container .menu a {
+    border-bottom: 0;
+    display: flex;
+    height: 120px;
+    font-size: 33px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .menuburguer {
+    display: flex;
+    cursor: pointer;
+  }
 }
