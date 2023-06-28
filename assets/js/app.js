@@ -10,9 +10,9 @@ const imgs = [
 ];
 let count = 0;
 window.onload = () => {
-  scrollSuave();
   slide.forEach((item, id) => {
     item.style.backgroundImage = `url(${imgs[id]})`;
+    scrollSuave();
   });
 };
 arrowClick.forEach((item, id) => {
@@ -26,7 +26,7 @@ arrowClick.forEach((item, id) => {
   console.log(positionSliders[count++]);
   console.log(positionSliders[--count]);
 });
-// scroll active motion
+
 const boxHome = document.querySelectorAll(".home-info");
 const jsScroll = document.querySelectorAll(".js-scroll");
 function HomeBoxes() {
