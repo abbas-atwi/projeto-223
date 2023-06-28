@@ -124,6 +124,8 @@ main {
 }
 
 .section-home {
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: green;
 }
 .home-container {
@@ -133,13 +135,15 @@ main {
   margin: auto;
   max-width: 1400px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 5px;
 }
 .home-info {
-  flex: 1 1 462px;
+  width: 400px;
   border-left: 5px solid #222;
   height: 300px;
+  border-radius: 4px;
   opacity: 0;
   background-color: #222;
 }
@@ -171,8 +175,8 @@ main {
 
 .menuburguer {
   margin-right: 10px;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   background-color: #fff;
   display: none;
   flex-direction: column;
@@ -201,6 +205,10 @@ main {
   width: 100vw;
   max-width: 1400px;
   background-color: red;
+  height: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 .contact-info {
   width: 200px;

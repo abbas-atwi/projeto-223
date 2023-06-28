@@ -1,19 +1,21 @@
 // sliders
 const arrowClick = document.querySelectorAll(".arrow");
 const sliders = document.querySelector(".sliders");
-const moveSliders = ["100", "200", "300"];
 const slide = document.querySelectorAll(".slide");
-let count = 0;
-// function moveSlide(ids) {}
-// arrowClick.forEach((item, id) => {
-//   item.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     const slide = item.id === "right" ? "-" : " ";
-//     sliders.style.marginLeft = `${slide}${moveSliders[count++]}vw`;
-//     count = 0;
-//   });
-// });
-
+const positionSliders = ["0vw", "-100vw", "-200vw"];
+// const p = ["0vw", "100vw", "200vw"];
+let count = 1;
+arrowClick.forEach((item, id) => {
+  item.addEventListener("click", () => {
+    if (item.getAttribute("id") == "right") {
+      sliders.style.marginLeft = positionSliders[count++];
+    } else if (item.getAttribute("id") == "left") {
+      sliders.style.marginLeft = positionSliders[--count];
+    }
+  });
+  console.log(positionSliders[count++]);
+  console.log(positionSliders[--count]);
+});
 // scroll active motion
 
 const boxHome = document.querySelectorAll(".home-info");
@@ -32,7 +34,7 @@ function scrollSuvae() {
     jsScroll.forEach((item) => {
       const boxTop = item.getBoundingClientRect().top < 0;
       if (boxTop) {
-        for (let i = 0; i < boxHome.length; i++) {
+        for (let i = 0; i <= boxHome.length; i++) {
           setInterval(() => {
             boxHome[i].classList.add("active");
           }, intervals[i]);
