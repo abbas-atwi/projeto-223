@@ -57,14 +57,14 @@ function scrollSuave() {
 scrollSuave();
 const links = document.querySelectorAll(".menu a[href^='#']");
 console.log(links);
-function scrollsActives() {
+function scrollsActives(i) {
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const href = link.getAttribute("href");
       const sections = document.querySelector(href);
       const sectionTop = sections.getBoundingClientRect().top < 0;
-      console.log(sectionTop);
+
       if (sectionTop <= 0) {
         for (let i = 0; i < boxHome.length; i++) {
           setInterval(() => {
@@ -80,7 +80,8 @@ function scrollsActives() {
     });
   });
 }
-
+boxHome[0].classList.add("active");
+boxHome[0].children[0].classList.add("active");
 scrollsActives();
 
 // active menu show mobile
