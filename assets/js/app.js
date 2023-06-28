@@ -64,7 +64,6 @@ function scrollsActives(i) {
       const href = link.getAttribute("href");
       const sections = document.querySelector(href);
       const sectionTop = sections.getBoundingClientRect().top < 0;
-
       if (sectionTop <= 0) {
         for (let i = 0; i < boxHome.length; i++) {
           setInterval(() => {
@@ -92,7 +91,6 @@ menuClickBuguer.addEventListener("click", () => {
 });
 
 const contato = document.querySelectorAll(".contact-info dt");
-
 contato.forEach((item) => {
   item.addEventListener("click", () => {
     item.nextElementSibling.classList.toggle("active");
