@@ -3,8 +3,18 @@ const arrowClick = document.querySelectorAll(".arrow");
 const sliders = document.querySelector(".sliders");
 const slide = document.querySelectorAll(".slide");
 const positionSliders = ["0vw", "-100vw", "-200vw"];
-// const p = ["0vw", "100vw", "200vw"];
+const imgs = [
+  "assets/img/front-end-1.jpeg",
+  "assets/img/front-end-2.webp",
+  "assets/img/front-end-1.jpeg",
+];
 let count = 0;
+
+window.onload = () => {
+  slide.forEach((item, id) => {
+    item.style.backgroundImage = `url(${imgs[id]})`;
+  });
+};
 arrowClick.forEach((item, id) => {
   item.addEventListener("click", () => {
     if (item.getAttribute("id") == "right") {
