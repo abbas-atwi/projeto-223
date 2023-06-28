@@ -84,7 +84,7 @@ main {
   /* z-index: 999; */
   margin-top: -300px;
   height: inherit;
-  display: none;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -122,7 +122,10 @@ main {
   width: 100vw;
   font-size: 50px;
 }
-
+.slide img {
+  width: inherit;
+  height: inherit;
+}
 .section-home {
   padding-top: 10px;
   padding-bottom: 10px;
