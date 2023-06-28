@@ -9,12 +9,12 @@ const imgs = [
   "assets/img/front-end-1.jpeg",
 ];
 let count = 0;
-window.onload = () => {
-  slide.forEach((item, id) => {
-    item.style.backgroundImage = `url(${imgs[id]})`;
-    scrollSuave();
-  });
-};
+
+slide.forEach((item, id) => {
+  item.style.backgroundImage = `url(${imgs[id]})`;
+  scrollSuave();
+});
+
 arrowClick.forEach((item, id) => {
   item.addEventListener("click", () => {
     if (item.getAttribute("id") == "right") {
