@@ -16,6 +16,7 @@ slide.forEach((item, id) => {
 });
 
 arrowClick.forEach((item, id) => {
+  sliders.classList.add("active");
   item.addEventListener("click", () => {
     if (item.getAttribute("id") == "right") {
       sliders.style.marginLeft = positionSliders[++count];
@@ -43,6 +44,7 @@ function scrollSuave() {
   window.addEventListener("scroll", () => {
     jsScroll.forEach((item) => {
       const boxTop = item.getBoundingClientRect().top - metades;
+
       if (boxTop <= 0) {
         for (let i = 0; i < boxHome.length; i++) {
           setInterval(() => {
