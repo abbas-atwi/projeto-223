@@ -103,8 +103,8 @@ const browser = window.matchMedia("(max-width: 600px)").matches;
 const body = document.querySelector("body");
 console.log(browser);
 if (browser) {
-  slide.forEach((item, id) => {
-    item.style.backgroundImage = "";
-    item.style.backgroundColor = "blue";
-  });
+  // slide.forEach((item, id) => {
+  //   item.style.backgroundImage = "";
+  //   item.style.backgroundColor = "blue";
+  // });
 }
