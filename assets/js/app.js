@@ -37,12 +37,13 @@ function HomeBoxes() {
 }
 HomeBoxes();
 const intervals = [1100, 1200, 1300, 1400];
-const heightWindow = window.innerHeight * 0.6;
+const metades = window.innerHeight * 0.6;
+
 function scrollSuave() {
   window.addEventListener("scroll", () => {
     jsScroll.forEach((item) => {
-      const boxTop = item.getBoundingClientRect().top - heightWindow;
-      if (boxTop < 0) {
+      const boxTop = item.getBoundingClientRect().top - metades;
+      if (boxTop <= 0) {
         for (let i = 0; i < boxHome.length; i++) {
           setInterval(() => {
             boxHome[i].classList.add("active");
@@ -50,10 +51,10 @@ function scrollSuave() {
           }, intervals[i]);
         }
       }
-      console.log();
     });
   });
 }
+
 scrollSuave();
 const links = document.querySelectorAll(".menu a[href^='#']");
 console.log(links);
@@ -82,7 +83,6 @@ function scrollsActives(i) {
 boxHome[0].classList.add("active");
 boxHome[0].children[0].classList.add("active");
 scrollsActives();
-
 // active menu show mobile
 const menuClickBuguer = document.querySelector(".menuburguer");
 const menuNav = document.querySelector(".menu nav");
