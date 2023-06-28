@@ -4,11 +4,11 @@ const sliders = document.querySelector(".sliders");
 const slide = document.querySelectorAll(".slide");
 const positionSliders = ["0vw", "-100vw", "-200vw"];
 // const p = ["0vw", "100vw", "200vw"];
-let count = 1;
+let count = 0;
 arrowClick.forEach((item, id) => {
   item.addEventListener("click", () => {
     if (item.getAttribute("id") == "right") {
-      sliders.style.marginLeft = positionSliders[count++];
+      sliders.style.marginLeft = positionSliders[++count];
     } else if (item.getAttribute("id") == "left") {
       sliders.style.marginLeft = positionSliders[--count];
     }
