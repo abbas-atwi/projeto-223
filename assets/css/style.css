@@ -210,33 +210,42 @@ main {
 }
 
 .contact-container {
+  padding-top: 10px;
   width: 100vw;
   max-width: 1400px;
-  background-color: red;
+  background-color: #eee;
   height: 600px;
   margin: auto;
   display: flex;
   justify-content: center;
+  gap: 5px;
 }
 .contact-info {
+  padding: 3px;
   width: 200px;
   height: 100px;
-  background-color: yellow;
+  background-color: #ccc;
 }
 .contact-info dt {
   text-align: center;
   cursor: pointer;
 }
-
+.contact-info dt::after {
+  content: " ⤦";
+}
 .contact-info dd {
-  background-color: orange;
+  background-color: #222;
   padding: 10px;
+  border-radius: 20px;
+  color: #ccc;
   opacity: 0;
   text-align: center;
   transform: translate3d(0, -3px, 0);
   transition: transform 0.3s ease-in-out;
 }
-
+.contact-info dt.active::after {
+  content: " ⤤";
+}
 .contact-info dd.active {
   opacity: 1;
   transform: translate3d(0, 0, 0);

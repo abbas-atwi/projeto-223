@@ -27,7 +27,6 @@ arrowClick.forEach((item, id) => {
   console.log(positionSliders[--count]);
 });
 // scroll active motion
-
 const boxHome = document.querySelectorAll(".home-info");
 const jsScroll = document.querySelectorAll(".js-scroll");
 function HomeBoxes() {
@@ -42,8 +41,8 @@ const heightWindow = window.innerHeight * 0.6;
 function scrollSuave() {
   window.addEventListener("scroll", () => {
     jsScroll.forEach((item) => {
-      const boxTop = item.getBoundingClientRect().top < 0;
-      if (boxTop) {
+      const boxTop = item.getBoundingClientRect().top - heightWindow;
+      if (boxTop < 0) {
         for (let i = 0; i < boxHome.length; i++) {
           setInterval(() => {
             boxHome[i].classList.add("active");
@@ -95,5 +94,6 @@ const contato = document.querySelectorAll(".contact-info dt");
 contato.forEach((item) => {
   item.addEventListener("click", () => {
     item.nextElementSibling.classList.toggle("active");
+    item.classList.toggle("active");
   });
 });
