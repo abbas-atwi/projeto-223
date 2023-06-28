@@ -9,7 +9,6 @@ const imgs = [
   "assets/img/front-end-1.jpeg",
 ];
 let count = 0;
-
 window.onload = () => {
   slide.forEach((item, id) => {
     item.style.backgroundImage = `url(${imgs[id]})`;
@@ -37,25 +36,25 @@ function HomeBoxes() {
   });
 }
 HomeBoxes();
-const intervals = [1000, 1300, 1400];
+const intervals = [1100, 1200, 1300, 1400];
 const heightWindow = window.innerHeight * 0.6;
-function scrollSuvae() {
+function scrollSuave() {
   window.addEventListener("scroll", () => {
     jsScroll.forEach((item) => {
       const boxTop = item.getBoundingClientRect().top < 0;
       if (boxTop) {
-        for (let i = 0; i <= boxHome.length; i++) {
+        for (let i = 0; i < boxHome.length; i++) {
           setInterval(() => {
             boxHome[i].classList.add("active");
+            boxHome[i].children[0].classList.add("active");
           }, intervals[i]);
-          boxHome[i].children[0].classList.add("active");
         }
       }
       console.log();
     });
   });
 }
-scrollSuvae();
+scrollSuave();
 const links = document.querySelectorAll(".menu a[href^='#']");
 console.log(links);
 function scrollsActives() {
