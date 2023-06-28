@@ -120,7 +120,8 @@ main {
 }
 .sliders .slide {
   width: 100vw;
-  font-size: 50px;
+  height: 100%;
+  /* overflow-y: hidden; */
 }
 .slide img {
   width: inherit;
@@ -278,5 +279,9 @@ main {
   .menuburguer {
     display: flex;
     cursor: pointer;
+  }
+  .arrows {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
