@@ -10,6 +10,7 @@ const imgs = [
 ];
 let count = 0;
 window.onload = () => {
+  scrollSuave();
   slide.forEach((item, id) => {
     item.style.backgroundImage = `url(${imgs[id]})`;
   });
