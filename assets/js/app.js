@@ -44,7 +44,6 @@ function scrollSuave() {
   window.addEventListener("scroll", () => {
     jsScroll.forEach((item) => {
       const boxTop = item.getBoundingClientRect().top - metades;
-
       if (boxTop <= 0) {
         for (let i = 0; i < boxHome.length; i++) {
           setInterval(() => {
@@ -99,3 +98,13 @@ contato.forEach((item) => {
     item.classList.toggle("active");
   });
 });
+
+const browser = window.matchMedia("(max-width: 600px)").matches;
+const body = document.querySelector("body");
+console.log(browser);
+if (browser) {
+  slide.forEach((item, id) => {
+    item.style.backgroundImage = "";
+    item.style.backgroundColor = "blue";
+  });
+}
