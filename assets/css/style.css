@@ -209,6 +209,20 @@ main {
   animation: showP 0.6s forwards;
   display: block;
 }
+
+footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+footer p {
+  color: #ccc;
+  font-weight: normal;
+  font-size: 14px;
+}
 @keyframes home-title {
   from {
     opacity: 0;
@@ -260,7 +274,26 @@ main {
     margin-right: 0;
   }
 }
-
+.section-projetos {
+  background-color: red;
+}
+.section-projetos .projetos-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 1400px;
+  width: 100vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.projetos-box {
+  width: 300px;
+  height: 200px;
+  background-color: blue;
+}
 .contact-container {
   padding-top: 10px;
   padding-bottom: 10px;

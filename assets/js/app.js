@@ -37,7 +37,7 @@ function HomeBoxes() {
   });
 }
 HomeBoxes();
-const intervals = [1100, 1200, 1300, 1400];
+const intervals = [1100, 1200, 1400, 1600];
 const metades = window.innerHeight * 0.6;
 
 function scrollSuave() {
