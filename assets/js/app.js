@@ -15,11 +15,16 @@ slide.forEach((item, id) => {
   scrollSuave();
 });
 
+function slidersActive() {
+  sliders.classList.remove("active");
+}
+
 arrowClick.forEach((item, id) => {
-  sliders.classList.add("active");
   item.addEventListener("click", () => {
     if (item.getAttribute("id") == "right") {
       sliders.style.marginLeft = positionSliders[++count];
+      slidersActive();
+      sliders.classList.add("active");
     } else if (item.getAttribute("id") == "left") {
       sliders.style.marginLeft = positionSliders[--count];
     }
@@ -108,3 +113,27 @@ if (browser) {
   //   item.style.backgroundColor = "blue";
   // });
 }
+
+// likes btn
+const projects = document.querySelectorAll(".projetos-box");
+let countLikes = 1;
+function likeArray(id) {
+  projects.forEach((item) => {
+    item.classList.remove("showLike");
+  });
+  let likes = countLikes++;
+  projects[id].classList.add("showLike");
+  if (projects[id].classList.contains("showLike")) {
+    console.log(projects[id].classList.contains("showLike"));
+    projects[id].children[0].innerHTML = likes;
+  } else {
+    countLikes = 1;
+  }
+}
+const btns = document.querySelectorAll(".projetos-box a ");
+btns.forEach((item, id) => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    likeArray(id);
+  });
+});
