@@ -88,6 +88,8 @@ function scrollsActives(i) {
 }
 boxHome[0].classList.add("active");
 boxHome[0].children[0].classList.add("active");
+boxHome[1].classList.add("active");
+boxHome[1].children[0].classList.add("active");
 scrollsActives();
 // active menu show mobile
 const menuClickBuguer = document.querySelector(".menuburguer");
@@ -117,23 +119,25 @@ if (browser) {
 // likes btn
 const projects = document.querySelectorAll(".projetos-box");
 let countLikes = 1;
-function likeArray(id) {
-  projects.forEach((item) => {
-    item.classList.remove("showLike");
+function likeArray(id) {}
+function likeA(id) {
+  projects.forEach((item, id) => {
+    item.children[0].innerHTML = 1;
   });
-  let likes = countLikes++;
-  projects[id].classList.add("showLike");
-  if (projects[id].classList.contains("showLike")) {
-    console.log(projects[id].classList.contains("showLike"));
-    projects[id].children[0].innerHTML = likes;
-  } else {
-    countLikes = 1;
-  }
+  const likesss = (projects[id].children[0].innerHTML = countLikes++);
+  projects[id].children[0].innerHTML = likesss;
 }
 const btns = document.querySelectorAll(".projetos-box a ");
-btns.forEach((item, id) => {
-  item.addEventListener("click", (e) => {
+projects.forEach((item, id) => {
+  btns[id].addEventListener("click", (e) => {
     e.preventDefault();
-    likeArray(id);
+    likeA(id);
+    // countLikes = 1;
+    projects[id].children[0].innerHTML = countLikes++;
+    // if (projects[id] != projects[id]) {
+    //   console.log(1);
+    // }
+    console.log(likesss, 255);
+    // projects[id].children[0].innerHTML = countLikes++;
   });
 });
